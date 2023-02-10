@@ -14,3 +14,9 @@ git add .
 git commit -m "Criada a estrutura de pastas, criado a solução backend e o projeto WebApi"
 git status
 git push
+
+/* Executar o projeto direto do backend */
+dotnet watch run AccountOwnerServer\AccountOwnerServer.csproj
+
+/* Executar o projeto direto da pasta do projeto */
+dotnet watch run
