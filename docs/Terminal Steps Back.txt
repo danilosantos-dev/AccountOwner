@@ -12,3 +12,5 @@ dotnet sln add AccountOwnerServer\AccountOwnerServer.csproj
 /* */
 git add .
 git commit -m "Criada a estrutura de pastas, criado a solução backend e o projeto WebApi"
+git status
+git push
