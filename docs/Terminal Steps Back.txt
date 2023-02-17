@@ -20,3 +20,29 @@ dotnet watch run AccountOwnerServer\AccountOwnerServer.csproj
 
 /* Executar o projeto direto da pasta do projeto */
 dotnet watch run
+
+/* Estando na pasta backend */
+/*Cria o projeto de biblioteca de classes para interfaces*/
+dotnet new classlib --name Contracts -f net6.0
+
+/* Adicionar o projeto na solução */
+dotnet sln add Contracts/Contracts.csproj
+
+/* Adicionar o projeto no servico de log */
+dotnet new classlib --name LoggerService -f net6.0
+
+/* Adicionar o projeto na solução */
+dotnet sln add LoggerService\LoggerService.csproj
+
+/* Adicionar referência do Contracts no LoggerService */
+dotnet add LoggerService\LoggerService.csproj reference Contracts\Contracts.csproj
+
+/* Adicionar referência do LoggerService na API */
+dotnet add AccountOwnerServer\AccountOwnerServer.csproj reference LoggerService\LoggerService.csproj
+
+/* Entrar na pasta do projeto LoggerService  */
+cd LoggerService
+
+/* Instalar o pacote NLog - */
+dotnet add package NLog.Extensions.Logging --version 5.2.1
+
