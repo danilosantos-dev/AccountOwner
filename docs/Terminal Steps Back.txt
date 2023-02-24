@@ -46,3 +46,12 @@ cd LoggerService
 /* Instalar o pacote NLog - */
 dotnet add package NLog.Extensions.Logging --version 5.2.1
 
+/* Adicionar o projeto da Entidades - Models */
+dotnet new classlib --name Entities -f net6.0
+
+/* Adicionar o projeto na solução */
+dotnet sln add Entities\Entities.csproj
+
+/* Instalar o pacote do Pomelo na pasta Entities */
+dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.2
+
