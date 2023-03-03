@@ -55,3 +55,15 @@ dotnet sln add Entities\Entities.csproj
 /* Instalar o pacote do Pomelo na pasta Entities */
 dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.2
 
+/* Adicionar o projeto de Repositório - na pasta do backend */
+dotnet new classlib --name Repository -f net6.0
+
+/* Adicionar o projeto na solução */
+dotnet sln add Repository\Repository.csproj 
+
+dotnet add Repository\Repository.csproj reference Entities\Entities.csproj
+dotnet add Repository\Repository.csproj reference Contracts\Contracts.csproj
+
+dotnet add AccountOwnerServer\AccountOwnerServer.csproj reference Repository\Repository.csproj
+
+
