@@ -35,8 +35,9 @@ namespace AccountOwnerServer.Extensions;
         public static void ConfigureMySqlContext(this IServiceCollection services, IConfiguration config)
         {
             var conn = config["mysqlconnection:connectionString"];
+            var serverVersion = ServerVersion.AutoDetect(conn);
             services.AddDbContext<RepositoryContext>(
-                o => o.UseMySql(conn, ServerVersion.AutoDetect(conn))
+                o => o.UseMySql(conn, serverVersion)
             );
         }
 
