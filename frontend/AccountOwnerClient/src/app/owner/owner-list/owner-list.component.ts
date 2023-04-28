@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Owner } from './../../_interfaces/owner.model';
 import { OwnerRepositoryService } from './../../shared/services/owner-repository.service';
@@ -16,8 +16,8 @@ export class OwnerListComponent implements OnInit {
   errorMessage: string = '';
 
   constructor(private repository: OwnerRepositoryService,
-     private errorHandler: ErrorHandlerService,
-     private router: Router) {}
+    private errorHandler: ErrorHandlerService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getAllOwners();
@@ -38,5 +38,10 @@ export class OwnerListComponent implements OnInit {
   public getOwnerDetails = (id) => {
     const detailsUrl: string = `/owner/details/${id}`;
     this.router.navigate([detailsUrl]);
+  }
+
+  public redirectToUpdatePage = (id) => {
+    const updateUrl: string = `/owner/update/${id}`;
+    this.router.navigate([updateUrl]);
   }
 }

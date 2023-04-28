@@ -15,6 +15,7 @@ export class AppendDirective implements OnChanges {
       const accNum = changes.ownerParam.currentValue.accounts.length;
       const span = this.renderer.createElement('span');
       const text = this.renderer.createText(` (${accNum}) accounts`);
+      
       this.renderer.appendChild(span, text);
       this.renderer.appendChild(this.element.nativeElement, span);
     }
