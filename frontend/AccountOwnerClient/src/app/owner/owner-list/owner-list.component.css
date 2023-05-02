@@ -1,0 +1,8 @@
+.botao{
+    width: 150px;
+}
+
+.botao > a{
+    text-decoration: none;
+    color: white;
+}

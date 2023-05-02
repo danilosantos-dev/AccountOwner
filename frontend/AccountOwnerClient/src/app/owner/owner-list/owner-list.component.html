@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="offset-10 col-md-2 mt-2"> 
+    <div class="offset-10 col-md-2 mt-2 btn btn-primary botao" > 
         <a [routerLink]="['/owner/create']">Create owner</a> 
     </div>
 </div> 
@@ -31,7 +31,8 @@
                         <td><button type="button" id="update" class="btn btn-success" (click)="redirectToUpdatePage(owner.id)"> Update
                             </button>
                         </td>
-                        <td><button type="button" id="delete" class="btn btn-danger"> Delete
+                        <td><button type="button" id="delete" class="btn btn-danger"
+                            (click)="redirectToDeletePage(owner.id)"> Delete
                             </button>
                         </td>
                     </tr>
